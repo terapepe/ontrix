@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="40" y1="20" x2="470" y2="490" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111D27"/>
+      <stop offset="100%" stop-color="#05090E"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="100" y1="90" x2="410" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#65F5C1"/>
+      <stop offset="100%" stop-color="#00A9FF"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Outer blockchain structure -->
+  <path d="M256 65 L421 160 L421 352 L256 447 L91 352 L91 160 Z" stroke="url(#logo)" stroke-width="12" stroke-linejoin="round" opacity=".9"/>
+  <!-- Network connections -->
+  <g stroke="url(#logo)" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M172 172 L256 256 L340 172"/>
+    <path d="M172 340 L256 256 L340 340"/>
+  </g>
+  <!-- Center data node -->
+  <circle cx="256" cy="256" r="22" fill="#FFFFFF" filter="url(#glow)"/>
+  <!-- Network nodes -->
+  <g fill="#65F5C1">
+    <circle cx="172" cy="172" r="11"/><circle cx="340" cy="172" r="11"/>
+    <circle cx="172" cy="340" r="11"/><circle cx="340" cy="340" r="11"/>
+  </g>
+  <!-- Technical connection lines -->
+  <g stroke="#65F5C1" stroke-width="5" opacity=".65">
+    <path d="M256 65 V105"/><path d="M256 407 V447"/>
+    <path d="M91 160 L126 180"/><path d="M421 352 L386 332"/>
+    <path d="M91 352 L126 332"/><path d="M421 160 L386 180"/>
+  </g>
+</svg>
