@@ -12,7 +12,7 @@
     token: {
       name: "ONTRIX",
       symbol: "ONT",
-      evm: "",
+      evm: "0x628200810191298Adb6452D2B40a38f587C5Ef01",
       sol: "",
     },
 
