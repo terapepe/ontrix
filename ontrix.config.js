@@ -1,8 +1,3 @@
-/**
- * ONTRIX — single source of truth.
- * Edit this file on GitHub; Vercel redeploys automatically.
- * Used by the browser (window.ONTRIX_CONFIG) and by the Vercel API functions (require).
- */
 (function (root) {
   const CONFIG = {
     brand: {
@@ -14,29 +9,21 @@
         "ONTRIX is a blockchain intelligence operating system: live wallet networks, whale radar, money-flow tracing and token intel across Solana, Robinhood Chain, Base and BNB Smart Chain.",
     },
 
-    /** $ONT token. Fill the CA after launch. */
     token: {
       name: "ONTRIX",
       symbol: "ONT",
-      // Contract address shared by all EVM networks (Robinhood, Base, BSC). Leave "" until launch.
       evm: "",
-      // Mint address on Solana. Leave "" until launch.
       sol: "",
     },
 
     social: {
       x: "https://x.com/ONTRIXdata",
       xHandle: "@ONTRIXdata",
-      telegram: "", // e.g. "https://t.me/ontrix" — hidden when empty
+      telegram: "",
     },
 
-    /**
-     * Network mode
-     *  "single" → only `singleNetwork` is shown and themed (any key from `networks`)
-     *  "multi"  → always all 4 networks (Solana, Robinhood, Base, BSC) in `multiOrder`
-     */
-    mode: "multi",
-    singleNetwork: "base",
+    mode: "single",
+    singleNetwork: "robinhood",
     multiOrder: ["solana", "robinhood", "base", "bsc"],
 
     networks: {
