@@ -21,7 +21,7 @@ Real wallets, real transactions, streamed from public nodes of **Solana, Robinho
 
 Global: omnibox (`/`) auto-detects wallet / tx hash / token; network filter (multi mode); CA chips with network icons and Copy CA; signal ticker (whales, $ONT transfers, watchlist hits).
 
-## Configure — `ontrix.config.js`
+## Configure — `js/ontrix.config.js`
 
 Everything editable lives in **one file** (used by both the browser and the API functions). Edit on GitHub → Vercel redeploys.
 
@@ -64,7 +64,7 @@ The `/api` relays only run on Vercel (or `vercel dev`); locally the app talks to
 
 ```
 index.html            shell
-ontrix.config.js      ALL settings
+js/ontrix.config.js   ALL settings
 css/ontrix.css        design system
 js/app.js             boot, shell, router
 js/util.js · net.js   helpers, transport (RPC/REST, direct→relay), prices

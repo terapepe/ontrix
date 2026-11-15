@@ -1,6 +1,6 @@
 // Vercel serverless GET relay for allowlisted public APIs: GET /api/proxy?url=<encoded>
 // Used when a public API blocks browser CORS. Adds ETHERSCAN_API_KEY for api.etherscan.io if set.
-const CONFIG = require("../ontrix.config.js");
+const CONFIG = require("../js/ontrix.config.js");
 
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");

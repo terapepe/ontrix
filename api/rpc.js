@@ -1,6 +1,6 @@
 // Vercel serverless JSON-RPC relay: POST /api/rpc?net=<networkKey>
 // Forwards the JSON-RPC body to the network's rpcUrls (from ontrix.config.js) with failover.
-const CONFIG = require("../ontrix.config.js");
+const CONFIG = require("../js/ontrix.config.js");
 
 const ALLOWED_METHODS = new Set([
   // EVM (read-only)

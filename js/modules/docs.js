@@ -87,7 +87,7 @@ const SECTIONS = [
     </table>
     <p>Your browser talks to these sources directly. When a source blocks browser requests, ONTRIX automatically switches to its own read-only relay (<code>/api/rpc</code>, <code>/api/proxy</code>) for that source. ONTRIX never asks for a wallet connection, private key or signature.</p>` },
   { id: "config", t: "Operator config", html: () => `
-    <p>Everything is controlled from a single file in the repository: <code>ontrix.config.js</code>. Edit it on GitHub and Vercel redeploys automatically.</p>
+    <p>Everything is controlled from a single file in the repository: <code>js/ontrix.config.js</code>. Edit it on GitHub and Vercel redeploys automatically.</p>
     <table>
       <tr><th>Key</th><th>Purpose</th><th>Current</th></tr>
       <tr><td><code>token.name / token.symbol</code></td><td>Token identity</td><td>${esc(CFG.token.name)} / ${esc(sym)}</td></tr>
