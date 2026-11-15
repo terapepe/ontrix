@@ -12,8 +12,8 @@
     token: {
       name: "ONTRIX",
       symbol: "ONT",
-      evm: "",
-      sol: "",
+      evm: "0x4E7EB226394441ed22Fb3317472FFe34c59086EA",
+      sol: "9aq3Fp8GWn2buKhA5qQq3bq3FqS1QfbpR7DFsvBQm6ea",
     },
 
     social: {
