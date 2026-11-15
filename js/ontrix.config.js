@@ -12,7 +12,7 @@
     token: {
       name: "ONTRIX",
       symbol: "ONT",
-      evm: "0xe462cfbc6aa03c732d86d65eeb825e9d0e9d5cba",
+      evm: "",
       sol: "",
     },
 
@@ -22,7 +22,7 @@
       telegram: "",
     },
 
-    mode: "single",
+    mode: "multi",
     singleNetwork: "robinhood",
     multiOrder: ["solana", "robinhood", "base", "bsc"],
 
