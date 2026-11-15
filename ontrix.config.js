@@ -28,7 +28,6 @@
       x: "https://x.com/ONTRIXdata",
       xHandle: "@ONTRIXdata",
       telegram: "", // e.g. "https://t.me/ontrix" — hidden when empty
-      github: "https://github.com/terapepe/ontrix",
     },
 
     /**

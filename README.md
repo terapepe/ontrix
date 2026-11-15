@@ -35,7 +35,7 @@ Everything editable lives in **one file** (used by both the browser and the API 
 | `singleNetwork` | Any key of `networks` (`solana`, `robinhood`, `base`, `bsc`) — the UI takes that network's colour |
 | `multiOrder` | Order of the 4 networks in multi mode |
 | `networks.<key>` | name, colour, icon, RPC URLs, transport (`auto`/`direct`/`proxy`), poll speed, explorer, Blockscout API, DexScreener chain id |
-| `social.x`, `social.telegram`, `social.github` | Rail links (empty → hidden) |
+| `social.x`, `social.telegram` | Rail links (empty → hidden) |
 | `intel.*` | Whale / smart-money thresholds (USD), window, node cap, cluster size, wallet classes |
 | `proxyAllowHosts` | Hosts the `/api/proxy` relay may fetch |
 
