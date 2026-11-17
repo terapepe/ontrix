@@ -12,7 +12,7 @@
     token: {
       name: "ONTRIX-OS",
       symbol: "ONX",
-      evm: "0x7770f1D686BA815354245A810e50caB41A48cd4A",
+      evm: "",
       sol: "",
     },
 
