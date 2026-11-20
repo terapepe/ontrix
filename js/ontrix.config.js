@@ -23,7 +23,7 @@
     },
 
     mode: "single",
-    singleNetwork: "robinhood",
+    singleNetwork: "solana",
     multiOrder: ["solana", "robinhood", "base", "bsc"],
 
     networks: {
