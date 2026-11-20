@@ -13,7 +13,7 @@
       name: "ONTRIX-OS",
       symbol: "ONX",
       evm: "",
-      sol: "",
+      sol: "FRCGbekZiUCMrEQbmNsz53AuRWKsbtrqPa9M9DGXS6ea",
     },
 
     social: {
