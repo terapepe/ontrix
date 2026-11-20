@@ -54,15 +54,24 @@ async function evmLatest(k) {
 // ---------------- Solana ----------------
 async function solLatest(k, lastSlot) {
   const head = await rpc(k, "getSlot", [{ commitment: "confirmed" }]);
-  let slot = head;
-  if (lastSlot && slot <= lastSlot) return null;
-  let b = null;
-  for (let i = 0; i < 4 && !b; i++, slot--) {
+  if (lastSlot && head <= lastSlot) return null;
+  // The confirmed head is often not served by getBlock yet (-32004), and slots can be skipped
+  // (-32007/-32009). Walk back over those; stop on transport/rate-limit errors and report them.
+  const RETRYABLE = new Set([-32004, -32007, -32009, -32014]);
+  const floor = lastSlot ? Math.max(lastSlot + 1, head - 12) : head - 12;
+  let b = null, slot = head, lastErr = null;
+  for (; slot >= floor && !b; slot--) {
     try {
       b = await rpc(k, "getBlock", [slot, { encoding: "json", transactionDetails: "accounts", maxSupportedTransactionVersion: 0, rewards: false, commitment: "confirmed" }]);
-    } catch { b = null; }
+    } catch (e) {
+      lastErr = e;
+      if (!RETRYABLE.has(e.code)) break;
+    }
   }
-  if (!b) throw new Error("no block near slot " + head);
+  if (!b) {
+    if (lastSlot && (!lastErr || RETRYABLE.has(lastErr.code))) return null; // nothing servable since lastSlot yet
+    throw new Error(`no block near slot ${head}` + (lastErr ? ` · ${lastErr.message}` : ""));
+  }
   slot++;
   const txs = [];
   let votes = 0;

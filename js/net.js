@@ -15,7 +15,7 @@ async function timed(url, opts) {
 
 async function postJson(url, body) {
   const r = await timed(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-  if (!r.ok) throw new Error("HTTP " + r.status);
+  if (!r.ok) throw Object.assign(new Error("HTTP " + r.status), { status: r.status });
   return r.json();
 }
 
@@ -53,7 +53,7 @@ export async function rpc(k, method, params = []) {
   }
   latency[k] = Math.round(performance.now() - t0);
   bus.emit("rpc:latency", { k, ms: latency[k], via: mode[k] });
-  if (json.error) throw new Error(json.error.message || "rpc error");
+  if (json.error) throw Object.assign(new Error(json.error.message || "rpc error"), { code: json.error.code });
   return json.result;
 }
 export const rpcLatency = (k) => latency[k];
